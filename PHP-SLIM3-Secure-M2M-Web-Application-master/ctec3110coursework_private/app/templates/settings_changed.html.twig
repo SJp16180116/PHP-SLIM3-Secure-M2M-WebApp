@@ -1,0 +1,22 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <br/>
+    <div class="d-flex justify-content-sm-center">
+        <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">Changes detected!</h4>
+            <p>To accept all changes, provide your password again below:</p>
+            <form action="{{ action5 }}" method={{ method }} class="form-inline justify-content-sm-center">
+            <div class="form-group row">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+
+            <input type="hidden" name="encoded_array" id="encoded_array" value="{{ encoded_array }}" />
+
+            <div class="form-group row">
+                <button type="submit" class="btn btn-success" value="messages">Submit changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div class="table-responsive-sm table-bordered table-hover">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Date</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user_data in users_data %}
+                <form action="{{ action }}" method={{ method }}>
+                <tr>
+                    <input type="hidden" name="id" id="id" value="{{ user_data.id }}" />
+                    <input type="hidden" name="action" id="action" value="users_changed" />
+                    <td>{{ user_data.id }}</td>
+                    <td>{{ user_data.username }}</td>
+                    <td>{{ user_data.email }}</td>
+                    <td>{{ user_data.role }}</td>
+                    <td>{{ user_data.date }}</td>
+                    <td>
+                        <div class="col-sm-12">
+                            {% if user_data.role  == 'admin' %}
+                                <button type="submit" class="btn btn-danger btn-sm btn-block" value="Submit">
+                                   Demote
+                                </button>
+                            {% endif %}
+                            {% if user_data.role  == 'user' %}
+                                <button type="submit" class="btn btn-success btn-sm btn-block" value="Submit">
+                                Promote
+                            </button>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+            </form>
+            {% endfor %}
+            </form>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+{% endblock %}

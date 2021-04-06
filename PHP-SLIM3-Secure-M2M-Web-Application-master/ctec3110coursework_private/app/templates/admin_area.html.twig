@@ -1,0 +1,34 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Hello, <b>{{ username }}</b>!</h1>
+        <p class="lead">Your role is: {{ role }}</p>
+        <hr class="my-4">
+        <p>You are eligible to see below content:</p>
+        <div class="btn-group justify-content-between" role="group">
+            <form action="{{ action }}" method={{ method }}>
+                <button type="submit" class="btn btn-primary" value="circuit_board">View circuit board</button>
+            </form>
+        </div>
+        <div class="btn-group justify-content-between" role="group">
+            <form action="{{ action2 }}" method={{ method }}>
+                <button type="submit" class="btn btn-primary" value="messages">View messages</button>
+            </form>
+        </div>
+        <div class="btn-group justify-content-between" role="group">
+            <form action="{{ action4 }}" method={{ method }}>
+                <button type="submit" class="btn btn-primary" value="messages">Change settings</button>
+            </form>
+        </div>
+        <div class="btn-group justify-content-between" role="group">
+            <form action="{{ action5 }}" method={{ method }}>
+                <button type="submit" class="btn btn-primary" value="messages">Manage users</button>
+            </form>
+        </div>
+        <div class="btn-group justify-content-between" role="group">
+            <form action="{{ action6 }}" method={{ method }}>
+                <button type="submit" class="btn btn-primary" value="messages">Browse logs</button>
+            </form>
+        </div>
+    </div>	
+{% endblock %}
